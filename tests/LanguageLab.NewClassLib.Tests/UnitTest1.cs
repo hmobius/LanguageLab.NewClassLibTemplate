@@ -1,6 +1,6 @@
 namespace LanguageLab.NewClassLib.Tests
 {
-    using System;
+    using LanguageLab.NewClassLib;
     using Xunit;
 
     public class UnitTest1
@@ -8,6 +8,7 @@ namespace LanguageLab.NewClassLib.Tests
         [Fact]
         public void Test1()
         {
+            Assert.Equal("Hello", new Class1().Hello());
         }
     }
 }
