@@ -1,5 +1,5 @@
 {
-    "dotnet-test-explorer.testProjectPath": "tests\\LanguageLab.NewClassLib.Tests\\LanguageLab.NewClassLib.Tests.csproj",
+    "dotnet-test-explorer.testProjectPath": "tests/LanguageLab.NewClassLib.Tests/LanguageLab.NewClassLib.Tests.csproj",
     "dotnet-test-explorer.useTreeView": true,
     "dotnet-test-explorer.autoExpandTree":false
 }
