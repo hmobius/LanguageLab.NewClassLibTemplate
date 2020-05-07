@@ -11,19 +11,24 @@
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "publish",
+            "label": "build release package",
             "command": "dotnet",
             "type": "process",
             "args": [
-                "publish",
-                "${workspaceFolder}/tests/LanguageLab.NewClassLib.Tests/LanguageLab.NewClassLib.Tests.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "pack",
+                "-o:${workspaceFolder}/nuget",
+                "-c:Release",
+                "${workspaceFolder}/src/LanguageLab.NewClassLib/LanguageLab.NewClassLib.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "group": "build"
         },
         {
             "label": "watch",
@@ -44,61 +49,26 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/tests/LanguageLab.NewClassLib.Tests/LanguageLab.NewClassLib.Tests.csproj"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "test with coverage",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "test",
                 "/p:CollectCoverage=true",
                 "/p:CoverletOutputFormat=lcov",
                 "/p:CoverletOutput=${workspaceFolder}/coverage/lcov.info",
                 "${workspaceFolder}/tests/LanguageLab.NewClassLib.Tests/LanguageLab.NewClassLib.Tests.csproj"
             ],
             "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            }
+            "group": "test"
         },
         {
             "label": "test report",
+            "dependsOn": "test",
             "command": "dotnet",
             "type": "process",
             "args": [
-                "c:/users/maharryd/.nuget/packages/reportgenerator/4.4.7/tools/netcoreapp3.0/ReportGenerator.dll",
+                "c:/users/danma/.nuget/packages/reportgenerator/4.5.8/tools/netcoreapp3.0/ReportGenerator.dll",
                 "-reports:${workspaceFolder}/coverage/lcov.info",
                 "-targetdir:${workspaceFolder}/coverage/report"
             ],
             "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "create package",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "pack",
-                "-o:${workspaceFolder}/nuget",
-                "-c:Release",
-                "${workspaceFolder}/src/LanguageLab.NewClassLib/LanguageLab.NewClassLib.csproj"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "group": "test"
         }
     ]
 }
