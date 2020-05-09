@@ -1,6 +1,6 @@
 # LanguageLab.NewClassLibTemplate
 This repository provides an easy template for creating a new github repo for a test-driven, C# .NET Standard class library. 
-Go to [setup.md](setup.md) for instructions on how to get your project running once you have copied ths template.
+Go to [setup.md](SETUP.md) for instructions on how to get your project running once you have copied ths template.
 If you are looking to create a command line app project, please use [LanguageLab.NewCmdLineAppTemplate](https://github.com/mahardan-oup/LanguageLab.NewCmdLineAppTemplate) instead.
 
 This template has the features listed below. 
@@ -18,11 +18,11 @@ This template has the features listed below.
 
 ## MSBuild tasks
 tasks.json define five specific processes for the solution. Run them through VS Code or Visual Studio.
--  *build* is a straightforward debug build of both projects
--  *build release package* runs a release build of the class library, packages it into a nuget folder and saves it in the *nuget* folder.  
-- *watch* runs dotnet watch. For use with test coverage
-- *test* builds and runs the test project against Classlib, creating coverage stats for the tests and saving those stats in the *coverage* folder as lcov.info.
-- *test report* runs the *test* task and then generates an easy to read test coverage report which can be accessed at *coverage\report\index.htm*
+-  **build** is a straightforward debug build of both projects
+-  **build release package** runs a release build of the class library, packages it into a nuget folder and saves it in the *nuget* folder.  
+- **watch** runs dotnet watch. For use with test coverage
+- **test** builds and runs the test project against Classlib, creating coverage stats for the tests and saving those stats in the *coverage* folder as lcov.info.
+- **test report** runs the *test* task and then generates an easy to read test coverage report which can be accessed at *coverage\report\index.htm*
 
 ## Dependencies
 This template uses following nuget packages
@@ -31,12 +31,12 @@ This template uses following nuget packages
 
 ## Folder structure
 The template has the following structure
-- *.vscode* contains basic build tasks
-- *coverage* contains auto-generated code coverage files and reports. 
-- *docs* contains auto-generated XML documentation files
-- *lib* should contain any reference files for your project
-- *nuget* contains auto-generated nuget packages for uploading to github packages \ local nuget server
-- *src* is your source code projects folder
-- *tests* is your test projects folder
-- *.gitignore* is a copy of the [Visual Studio gitignore file](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) with Visual Studio Code additions and additional entries to ignore the contents of the *coverage*, *docs* and *nuget* folders.
+- **.vscode** contains basic build tasks
+- **coverage** contains auto-generated code coverage files and reports. 
+- **docs** contains auto-generated XML documentation files
+- **lib** should contain any reference files for your project
+- **nuget** contains auto-generated nuget packages for uploading to github packages \ local nuget server
+- **src** is your source code projects folder
+- **tests** is your test projects folder
+- **.gitignore** is a copy of the [Visual Studio gitignore file](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) with Visual Studio Code additions and additional entries to ignore the contents of the *coverage*, *docs* and *nuget* folders.
 - The two ruleset files govern some of the more over the top coding standards in the analysers. 

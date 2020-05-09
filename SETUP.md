@@ -6,7 +6,7 @@
 - Do not add a readme, .gitignore file or license as these are in the template already.
 
 ## Rename project and project files
-The solution, project, namespace and appropriate files are all called *LanguageLab.NewClassLib* something. 
+The solution, project, namespace and appropriate files are all called **LanguageLab.NewClassLib** something. 
 You'll need to change those to match your project name.
 
 - Clone the new repo to your local machine
@@ -21,9 +21,9 @@ You'll need to change those to match your project name.
 ## Restore packages and test tasks
 - Restore all nuget packages to the project with `dotnet restore`.
 - Check the project builds and tests correctly with `dotnet build` and `dotnet test`.
-- Open *tasks.json* and update the path to the ReportGenerator dll in the *test report* task.
-- Run the *test report* task and check the report is generated in the *coverage* folder.
-- Run the *build release package* task and check a new nuget package is generated in the *nuget* folder.
+- Open **tasks.json** and update the path to the ReportGenerator dll in the *test report* task.
+- Run the **test report** task and check the report is generated in the *coverage* folder.
+- Run the **build release package** task and check a new nuget package is generated in the *nuget* folder.
 
 ## Optional : Enable code coverage
 Test coverage is enabled with 
